@@ -1,8 +1,9 @@
 package com.ewallet.user.entity;
 
-import com.ewallet.user.enums.Gender;
-import com.ewallet.user.enums.Role;
-import com.ewallet.user.enums.Status;
+import com.common_service.enums.Gender;
+import com.common_service.enums.Role;
+import com.common_service.enums.Status;
+import com.ewallet.ewallet_admin.entity.Admin;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,6 +14,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.UUID;
 
 @Getter
 @Setter
@@ -24,7 +26,7 @@ public class User implements Serializable {
 
     @Id
     @Column(name = "id", nullable = false)
-    private String id;
+    private UUID id;
 
     @Column(name = "full_name")
     private String fullName;
@@ -81,7 +83,7 @@ public class User implements Serializable {
     private String updatedBy;
 
     @Column(name = "approved_at")
-    private LocalDateTime ApprovedAt; // LocalDateTime
+    private LocalDateTime ApprovedAt;
 
     @OneToOne
     @JoinColumn(name = "approved_by", referencedColumnName = "id")

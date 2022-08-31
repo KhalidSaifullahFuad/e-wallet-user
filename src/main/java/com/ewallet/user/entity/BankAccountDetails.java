@@ -1,6 +1,6 @@
 package com.ewallet.user.entity;
 
-import com.ewallet.user.enums.Status;
+import com.common_service.enums.Status;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
